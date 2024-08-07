@@ -1,0 +1,564 @@
+/* Reseta margens, paddings e estilos padrões */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Jost', sans-serif;
+	list-style: none;
+	text-decoration: none;
+}
+
+/* Configurações de variáveis */
+:root {
+	--main-color: #fda702;
+	--second-color: #ebeff2;
+	--text-color: #02171d;
+	--bg-color: #fff;
+	--box-shadow: 2px 2px 10px 4px rgba(36, 0, 0, 0.5);
+}
+
+/* Botões */
+.btn {
+	padding: 0.7rem 1.2rem;
+	background: var(--main-color);
+	color: var(--bg-color);
+	font-weight: 500;
+	display: inline-block;
+	text-transform: uppercase;
+	clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0);
+	transition: background 0.2s, letter-spacing 0.2s;
+}
+
+.btn:hover {
+	background: var(--text-color);
+	letter-spacing: 2px;
+}
+
+/* Imagens */
+img {
+	width: 100%;
+	height: auto; /* Garante que a altura seja proporcional à largura */
+}
+
+/* Estilo básico para o cabeçalho */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: var(--bg-color); /* Fundo do cabeçalho */
+	box-shadow: var(--box-shadow); /* Sombra do cabeçalho */
+	position: relative; /* Para posicionar a caixa de pesquisa corretamente */
+  }
+  
+  /* Estilo para o menu de navegação */
+  .navmenu {
+	display: flex;
+  }
+  
+  .navmenu ul {
+	display: flex;
+	gap: 20px; /* Espaçamento entre os itens do menu */
+  }
+  
+  .navmenu li {
+	list-style: none;
+  }
+  
+  .navmenu a {
+	color: var(--text-color);
+	text-decoration: none;
+	padding: 10px;
+	transition: color 0.3s;
+  }
+  
+  .navmenu a:hover {
+	color: var(--main-color);
+  }
+  
+  /* Estilo para os ícones de navegação */
+  .nav-icon {
+	display: flex;
+	gap: 15px; /* Espaçamento entre os ícones */
+	align-items: center; /* Alinha os ícones verticalmente */
+	position: relative; /* Para posicionar a caixa de pesquisa */
+  }
+  
+  .nav-icon a {
+	color: var(--text-color);
+	font-size: 24px;
+	transition: color 0.3s, transform 0.3s;
+  }
+  
+  .nav-icon a:hover {
+	color: var(--main-color);
+	transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+  }
+  
+  /* Estilo da caixa de pesquisa */
+  .search-box {
+	position: absolute;
+	top: 100%; /* Coloca a caixa abaixo dos ícones */
+	right: -300px; /* Inicialmente fora da tela */
+	transition: right 0.3s ease-in-out;
+  }
+  
+  .search-box.active {
+	right: 10px; /* Mostra a caixa de pesquisa */
+  }
+  
+  .search-box input {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: var(--box-shadow);
+	width: 250px;
+  }
+  
+
+/* Ícone do menu */
+#menu-icon {
+	font-size: 35px;
+	color: #000000;
+	cursor: pointer;
+}
+
+/* Seções */
+section {
+	padding: 50px 100px;
+}
+
+/* Logotipo */
+.logo {
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--text-color);
+}
+
+.logo .bx {
+	font-size: 24px;
+	color: #000;
+}
+
+
+/* Estilo do carrinho */
+.cart {
+	position: absolute;
+	top: 110%; /* Ajusta a posição vertical do carrinho em relação ao seu elemento pai */
+	right: -100%; /* Inicialmente oculta o carrinho fora da tela à direita */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 0.5rem;
+	background: var(--bg-color);
+	padding: 20px;
+	border-radius: 0.5rem;
+	box-shadow: var(--box-shadow);
+	transition: right 0.3s ease-in-out; /* Adiciona transição suave para a posição */
+	z-index: 999; /* Garante que o carrinho fique acima de outros elementos */
+}
+
+.cart img {
+	width: 100px; /* Tamanho fixo das imagens dos produtos */
+	height: auto; /* Mantém a proporção da imagem */
+}
+
+.cart .box {
+	display: flex;
+	align-items: center;
+	column-gap: 2rem; /* Espaço entre a imagem e o texto do produto */
+}
+
+.cart .box .text h3 {
+	font-size: 1rem; /* Tamanho da fonte do nome do produto */
+	color: var(--text-color); /* Cor do texto */
+}
+
+.cart .box .bx {
+	font-size: 24px; /* Tamanho dos ícones */
+}
+
+/* Efeito de hover nos ícones do carrinho */
+.cart .box .bx:hover {
+	color: var(--main-color); /* Cor dos ícones ao passar o mouse */
+}
+
+.cart h2 {
+	font-size: 1.1rem; /* Tamanho da fonte do total */
+	font-weight: 600; /* Peso da fonte para destacar o total */
+	color: var(--text-color); /* Cor do texto */
+}
+
+/* Estado ativo do carrinho */
+.cart.active {
+	right: 1rem; /* Mostra o carrinho a 1rem da borda direita da tela */
+}
+
+/* Estilo do perfil do usuário */
+.user {
+	position: absolute;
+	right: -100%;
+	top: 110%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 0.5rem;
+	background: var(--bg-color);
+	padding: 20px;
+	border-radius: 0.5rem;
+	box-shadow: var(--box-shadow);
+	transition: right 0.2s ease-in-out; /* Adiciona transição suave para a posição */
+	z-index: 999; /* Garante que o perfil do usuário fique acima de outros elementos */
+}
+
+.user h2 {
+	font-size: 1.2rem;
+	color: var(--text-color);
+}
+
+.user .login-btn {
+	background: #2d2b2b80;
+	color: var(--bg-color);
+	font-size: 1rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	cursor: pointer;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 0.5rem;
+	transition: background 0.2s;
+}
+
+.user .login-btn:hover {
+	background: var(--text-color);
+}
+
+.user input {
+	border: none;
+	outline: none;
+	background: var(--second-color);
+	padding: 10px;
+	border-radius: 0.5rem;
+	width: 100%;
+}
+
+.user p {
+	font-size: 0.938rem;
+}
+
+.user a {
+	text-decoration: underline;
+	color: #0019faa1;
+}
+
+/* Estado ativo do perfil do usuário */
+.user.active {
+	right: 1rem; /* Mostra o perfil do usuário a 1rem da borda direita da tela */
+}
+
+/* Estilo da seção home */
+.home {
+	width: 100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+	align-items: center;
+	gap: 1.5rem;
+	background: var(--second-color);
+	padding: 20px; /* Adiciona padding interno à seção home */
+}
+
+/* Estilo do texto da seção home */
+.home-text span {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.home-text h1 {
+	font-size: 3.4rem;
+	margin-bottom: 1rem;
+	color: var(--text-color); /* Cor do texto */
+}
+
+
+.heading {
+	text-align: center
+}
+
+.heading h1 {
+	font-size: 1.7rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	color: var(--text-color)
+}
+
+.heading span {
+	padding: .2rem 1.2rem;
+	background: var(--main-color);
+	color: var(--bg-color);
+	font-weight: 500;
+	display: inline-block;
+	text-transform: uppercase;
+	clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+}
+
+.new-arrival {
+	margin-top: 2rem;
+}
+
+.new-arrival .box {
+	position: relative;
+	overflow: hidden;
+	background: var(--second-color);
+}
+
+.new-arrival .box img {
+	background: var(--second-color);
+	width: 80%;
+	height: 90%;
+	object-fit: cover;
+}
+
+.new-arrival .box .content {
+	position: absolute;
+	top: -100%;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: hsl(0, 0%, 91%, 0.5);
+	overflow: hidden;
+}
+
+.new-arrival .box:hover .content {
+	top: 0;
+	transition: .3s;
+}
+
+.product-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.product-container .box {
+	position: relative;
+	padding: 10px;
+	box-shadow: var(--box-shadow);
+}
+
+.product-container .box .content h2 {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.product-container .box .content .stars .bx {
+	color: var(--main-color);
+}
+
+.product-container .box .bx-cart-alt {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+	font-size: 24px;
+	background: var(--main-color);
+	color: var(--bg-color);
+}
+
+.product-container .box .bx-cart-alt:hover {
+	background: var(--text-color);
+}
+
+.product-container .box:hover img {
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	transition: .5s;
+}
+
+.reviews-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.reviews-container .box {
+	padding: 10px;
+	border: 2px solid var(--text-color);
+	border-radius: .5rem;
+	text-align: center;
+	box-shadow: var(--box-shadow);
+}
+
+.reviews-container .box img {
+	width: 70px;
+	height: 70px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.reviews-container .box .stars .bx {
+	color: var(--main-color);
+}
+
+.reviews-container .box p {
+	font-size: .938rem;
+	font-style: italic;
+	margin: .5rem;
+}
+
+.reviews-container .box h2 {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.reviews-container .box:hover {
+	background: var(--text-color);
+	color: var(--main-color);
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+	gap: 1rem;
+	color: var(--text-color);
+}
+
+.footer-box h2 {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.footer-box p {
+	font-size: .938rem;
+	margin-bottom: 10px;
+}
+
+.social {
+	display: flex;
+	align-items: center;
+	column-gap: .5rem;
+}
+
+.social a .bx {
+	font-size: 24px;
+	color: var(--text-color);
+	padding: 10px;
+	background: var(--second-color);
+	border-radius: .5rem;
+}
+
+.social a .bx:hover {
+	background: var(--main-color);
+	color: var(--bg-color)
+}
+
+.footer-box h3 {
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.footer-box li a {
+	color: var(--text-color);
+}
+
+.footer-box li a:hover {
+	color: var(--main-color);
+}
+
+.payment {
+	display: flex;
+	align-items: center;
+	column-gap: .5rem;
+}
+
+.payment img {
+	width: 45px;
+}
+
+@media (max-width: 1058px) {
+	header {
+		padding: 18px 60px;
+
+	section {
+		padding: 50px 60px;
+	}
+
+	.home-text h1 {
+		font-size: 3rem;
+	}
+	}
+}
+	
+
+
+header {
+	padding: 18px 4%;
+}
+
+section {
+	padding: 50px 4%;
+}
+
+.home-text h1 {
+	font-size: 2.4rem;
+}
+
+@media (max-width: 768px) {
+	header {
+		padding: 12px 4%;
+	}
+
+	#menu-icon {
+		display: initial;
+	}
+
+	header .navbar {
+		position: absolute;
+		width: 240px;
+		height: 100vh;
+		top: 100%;
+		right: -100%;
+		display: flex;
+		flex-direction: column;
+		background: var(--bg-color);
+		row-gap: 1.4rem;
+		padding: 20px;
+		box-shadow: 4px 4px 0 4px #240000;
+		transition: .2s linear;
+		text-align: left;
+	}
+
+	.navbar.active {
+		right: 0;
+	}
+
+	.home-text h1 {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 360px) {
+	.home-text span {
+		font-size: .8rem;
+	}
+
+	.home-text h1 {
+		font-size: 1.7rem;
+
+	.cart img {
+		width: 77px;
+	}
+
+	.heading h1 {
+		font-size: 1.4rem;
+	}
+}
+}
